@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p id="games"></p>
+<p id="score">Score: 0</p>
+
+<table>
+    {% for row in board %}
+    <tr>
+        {% for col in row %}
+        <td>{{col}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+
+<form id="submitWord" method="post" autocomplete="off">
+    <label for="wordguess">Enter Guess Here</label>
+    <input type="text" name="wordguess" id="wordguess">
+    <input type="submit">
+</form>
+
+<p id="result"></p>
+
+{% endblock %}
